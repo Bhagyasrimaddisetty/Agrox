@@ -271,7 +271,7 @@ async def submit_credit_application(application_data: dict):
     )
     
     max_loan_amount = plot["area_acres"] * max_amount_per_acre
-    approved_amount = min(requested_amount, max_loan_amount)
+    approved_amount = min(float(requested_amount), max_loan_amount)
     
     status = "approved" if crop_health_score > 60 else "under_review"
     
